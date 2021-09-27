@@ -1,0 +1,59 @@
+body{
+    background-color: teal;
+    text-align: center;
+}
+
+.hi{
+    font-size: 50px;
+}
+
+.cont{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.button{
+    display: flex;
+    margin-left: 10px;
+}
+
+.delButton, .addButton{
+    margin-left: 10px;
+    background-color: white;
+    height: 34px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px;
+}
+
+.input-form{
+    width: 300px;
+    height: 30px;
+}
+
+.delButton:hover, .addButton:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+
+.tasks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.taskElem{
+    background-color: white;
+    margin: 5px;
+    width: 498px;
+    height: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
