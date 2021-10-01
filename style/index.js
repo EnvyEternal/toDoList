@@ -32,7 +32,7 @@ function addCheck(){
     timeElem.appendChild(checkBox);
     return timeElem;
 }
-
+/*
 function delTask(){
     const checkboxes = document.querySelectorAll('.checkBox');
     let deleteTask = document.querySelectorAll(".taskElem");
@@ -42,4 +42,16 @@ function delTask(){
          }
         }
     )
+}
+*/
+
+function delTask() {
+    const deleteTasks = document.querySelectorAll('input[type="checkbox"]');
+    if (deleteTasks){
+        for (let item of deleteTasks){
+            if (item.checked){
+                document.querySelector('.taskElem').remove();
+            }
+        }
+    }
 }
