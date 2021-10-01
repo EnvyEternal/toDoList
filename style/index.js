@@ -4,24 +4,42 @@ const del = document.querySelector('.delButton')
 const tasks = document.querySelector('.tasks')
 
 add.addEventListener('click', addTask);
+del.addEventListener('click', delTask);
 
-
-//del.addEventListener('click' delTask);
 function addTask(){
-
     let data = input.value; 
+    if(data <= 0){ 
+        alert('Nothing entered')
+    } else {
     let newTask = document.createElement('div');
     newTask.classList.add('taskElem');
+    newTask.innerHTML = input.value;
+    newTask.append(addCheck());
     tasks.append(newTask);
-    newTask.innerHTML = data
-    var x = document.createElement("INPUT");
-    x.setAttribute("type", "checkbox");
-
-    document.body.querySelector('.taskElem').append(x)
     document.querySelector('.input-form').value = ''
-        
+    }
 }
 
 
+function addCheck(){
+    const timeElem = document.createElement('div')
+    timeElem.classList.add('time')
+    const time = new Date()
+    timeElem.textContent = time.getFullYear() + '.' + time.getMonth() + '.' + time.getDate();
+    let checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.className = "checkBox"
+    timeElem.appendChild(checkBox);
+    return timeElem;
+}
 
-
+function delTask(){
+    const checkboxes = document.querySelectorAll('.checkBox');
+    let deleteTask = document.querySelectorAll(".taskElem");
+    Array.from(deleteTask).forEach((task) => {
+     if (task.querySelector('.checkBox').checked) {
+        task.remove();
+         }
+        }
+    )
+}
